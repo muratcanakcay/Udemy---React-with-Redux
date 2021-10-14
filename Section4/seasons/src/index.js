@@ -15,20 +15,30 @@ class App extends React.Component {
     super(props);
 
     // initialize state
-    this.state = { lat: null };
+    this.state = { lat: null, errorMessage: "" };
 
     window.navigator.geolocation.getCurrentPosition(
       (position) => {
         // always use setState to update state!
         this.setState({ lat: position.coords.latitude });
       },
-      (err) => console.log(err)
+      (err) => {
+        // always use setState to update state!
+        console.log(err);
+        this.setState({ errorMessage: err.message });
+      }
     );
   }
 
   // defining a class render method is obligatory in React!
   render() {
-    return <div>Latitude: {this.state.lat} </div>;
+    return (
+      <div>
+        Latitude: {this.state.lat}
+        <br />
+        Error: {this.state.errorMessage}
+      </div>
+    );
   }
 }
 
