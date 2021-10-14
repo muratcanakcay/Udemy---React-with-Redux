@@ -13,17 +13,22 @@ import ReactDOM from "react-dom";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { lat: null };
-  }
 
-  // defining a render method is obligatory in React!
-  render() {
+    // initialize state
+    this.state = { lat: null };
+
     window.navigator.geolocation.getCurrentPosition(
-      (position) => console.log(position),
+      (position) => {
+        // always use setState to update state!
+        this.setState({ lat: position.coords.latitude });
+      },
       (err) => console.log(err)
     );
+  }
 
-    return <div>Latitude: </div>;
+  // defining a class render method is obligatory in React!
+  render() {
+    return <div>Latitude: {this.state.lat} </div>;
   }
 }
 
