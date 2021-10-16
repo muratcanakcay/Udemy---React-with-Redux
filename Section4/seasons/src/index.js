@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import SeasonDisplay from "./SeasonDisplay";
 
 class App extends React.Component {
   // constructor not needed here anymore since we're initializing state outside
@@ -26,9 +27,13 @@ class App extends React.Component {
   render() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage} </div>;
-    } else if (!this.state.errorMessage && this.state.lat) {
-      return <div>Latitude: {this.state.lat} </div>;
-    } else return <div>Loading!</div>;
+    }
+
+    if (!this.state.errorMessage && this.state.lat) {
+      return <SeasonDisplay lat={this.state.lat} />;
+    }
+
+    return <div>Loading!</div>;
   }
 }
 
