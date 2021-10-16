@@ -1,22 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-// const App = () => {
-//   window.navigator.geolocation.getCurrentPosition(
-//     (position) => console.log(position),
-//     (err) => console.log(err)
-//   );
-
-//   return <div>Latitude: </div>;
-// };
-
 class App extends React.Component {
-  constructor(props) {
-    super(props);
+  // constructor not needed here anymore since we're initializing state outside
 
-    // initialize state
-    this.state = { lat: null, errorMessage: "" };
-  }
+  //   constructor(props) {
+  //     super(props);
+  //   }
+
+  // initialize state outside constructor
+  state = { lat: null, errorMessage: "" };
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
