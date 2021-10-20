@@ -3,13 +3,20 @@ import axios from "axios";
 import SearchBar from "./SearchBar";
 
 class App extends React.Component {
+  // getting response from promise with ".then()"
+
   onSearchSubmit(term) {
-    axios.get("https://api.unsplash.com/search/photos", {
-      params: { query: term },
-      headers: {
-        Authorization: "Client-ID k_H_587UN1PvBw4Y8F354q4bRUcv_7Nn2EudvDKWyr0",
-      },
-    });
+    axios
+      .get("https://api.unsplash.com/search/photos", {
+        params: { query: term },
+        headers: {
+          Authorization:
+            "Client-ID k_H_587UN1PvBw4Y8F354q4bRUcv_7Nn2EudvDKWyr0",
+        },
+      })
+      .then((response) => {
+        console.log(response.data.results);
+      });
   }
 
   render() {
