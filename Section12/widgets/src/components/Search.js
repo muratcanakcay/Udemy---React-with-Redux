@@ -37,7 +37,7 @@ const Search = () => {
 
   const renderedResults = results.map((result) => {
     return (
-      <div key={result.padeid} className="item">
+      <div key={result.pageid} className="item">
         <div className="right floated content">
           <a
             className="ui button"
