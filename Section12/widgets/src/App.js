@@ -2,11 +2,12 @@ import React, { useState } from "react"
 import Accordion from "./components/Accordion"
 import Search from "./components/Search"
 import DropDown from "./components/DropDown"
+import Translate from "./components/Translate"
 
 const items = [
   {
     title: "What is React?",
-    content: "Reach is a front end Javascript framework",
+    content: "React is a front end Javascript framework",
   },
   {
     title: "Why use React?",
@@ -38,10 +39,12 @@ const App = () => {
 
   return (
     <div>
-      <DropDown
+      <Translate />
+      {/* <DropDown
         selected={selected}
         onSelectedChange={setSelected}
-        options={options} />
+        options={options}
+        label="color" /> */}
       {/* <Search /> */}
       {/* <Accordion items={items} /> */}
     </div>
