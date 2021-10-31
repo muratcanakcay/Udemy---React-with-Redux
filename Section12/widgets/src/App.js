@@ -44,7 +44,7 @@ const App = () => {
         selected={selected}
         onSelectedChange={setSelected}
         options={options}
-        label="color" /> */}
+        label="Select a color:" /> */}
       {/* <Search /> */}
       {/* <Accordion items={items} /> */}
     </div>
