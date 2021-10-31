@@ -35,7 +35,7 @@ const Translate = () => {
             </div>
 
             <DropDown options={options} selected={language} onSelectedChange={setLanguage} label="Select a language:" />
-            <hr></hr>
+            <hr />
             <h3 className="ui header">Output:</h3>
             <Convert language={language} text={text} />
 
