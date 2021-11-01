@@ -19,6 +19,10 @@ const options = [
         label: "Turkish",
         value: "tr"
     },
+    {
+        label: "Polish",
+        value: "pl"
+    },
 ]
 
 const Translate = () => {
