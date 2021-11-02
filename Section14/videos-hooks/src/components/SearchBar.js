@@ -19,7 +19,7 @@ const SearchBar = ({ onFormSubmit }) => {
                         value={term}
                         onChange={(e) => {
                             setTerm(e.target.value)
-                        }
+                        }}
                     />
                 </div>
             </form>
