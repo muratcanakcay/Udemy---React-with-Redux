@@ -5,12 +5,10 @@ import VideoList from "./VideoList"
 import VideoDetail from "./VideoDetail"
 
 const App = () => {
-    const [videos, setVideos] = useState([])
+
     const [selectedVideo, setSelectedVideo] = useState(null)
 
-    useEffect(() => {
-        onTermSubmit("cats")
-    }, [])
+
 
     const onTermSubmit = async (term) => {
         const response = await youtube.get("/search", {
@@ -23,10 +21,6 @@ const App = () => {
         setSelectedVideo(response.data.items[0])
     }
 
-    const onVideoSelect = (video) => {
-        setSelectedVideo(video)
-    }
-
     return (
         <div className="ui container" style={{ marginTop: "10px" }}>
             <SearchBar onFormSubmit={onTermSubmit} />
@@ -37,7 +31,7 @@ const App = () => {
                     </div>
                     <div className="five wide column">
                         <VideoList
-                            onVideoSelect={onVideoSelect}
+                            onVideoSelect={setSelectedVideo}
                             videos={videos}
                         />
                     </div>

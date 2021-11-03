@@ -27,4 +27,4 @@ const SearchBar = ({ onFormSubmit }) => {
     )
 }
 
-export default SearchBar;
+export default SearchBar
