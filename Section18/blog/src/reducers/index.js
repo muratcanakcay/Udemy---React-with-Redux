@@ -1,4 +1,4 @@
-import { combineReducers, comboneReducers } from "redux"
+import { combineReducers } from "redux"
 
 
 
