@@ -1,4 +1,4 @@
-export default (state = [], action) => {
+const postReducer = (state = [], action) => {
     // using switch statement instead of if statement:
 
     switch (action.type) {
@@ -17,3 +17,5 @@ export default (state = [], action) => {
 
     // return state
 }
+
+export default postReducer
